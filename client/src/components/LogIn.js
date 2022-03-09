@@ -44,7 +44,6 @@ function Login({setIsAuthenticated, setUser}) {
             navigate("/")
           })
           
-          
         } else {
           res.json()
           .then(json => setErrors(json.error))

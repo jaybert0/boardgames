@@ -10,7 +10,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import IconButton from '@mui/material/IconButton';
 import { CardActionArea } from '@mui/material';
 import { Link } from "react-router-dom";
-import CloseIcon from '@mui/icons-material/Close';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 
@@ -40,7 +39,7 @@ function LibraryItem({id, name, picture_url, num_players, summary, genre, est_ti
     setOpen(!open)
   }
   useEffect(() => {
-    fetch(`/boardgames/${id}`)
+    fetch(`/boardgames/${bg.id}`)
       .then((r) => r.json())
       // .then((data)=>console.log(data))
       .then((data) => setModalData(data));
@@ -91,19 +90,19 @@ function LibraryItem({id, name, picture_url, num_players, summary, genre, est_ti
           <CardMedia
             component="img"
             height="140"
-            image={picture_url}
-            alt={name}
+            image={bg.picture_url}
+            alt={bg.name}
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {name}
+              {bg.name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {summary}...<br></br>
-              Genre: {genre}<br></br>
-              Number of Players: {num_players}<br></br>
-              Estimated Time to Play: {est_time}<br></br>
-              Borrowable: {borrow ? "Yes": "No"}
+              {bg.summary}...<br></br>
+              Genre: {bg.genre}<br></br>
+              Number of Players: {bg.num_players}<br></br>
+              Estimated Time to Play: {bg.est_time}<br></br>
+              Borrowable: {bg.borrow ? "Yes": "No"}
             </Typography>
           </CardContent>
           </CardActionArea>
@@ -112,15 +111,16 @@ function LibraryItem({id, name, picture_url, num_players, summary, genre, est_ti
             onClick= {() => {
             if (bg.id === id) {
                 setLibraryForm({
-                    id: id,
-                    name: name,
-                    picture_url: picture_url,
-                    num_players: num_players,
-                    summary: summary,
-                    genre: genre,
-                    est_time: est_time,
+                    key: bg.id,
+                    id: bg.id,
+                    name: bg.name,
+                    picture_url: bg.picture_url,
+                    num_players: bg.num_players,
+                    summary: bg.summary,
+                    genre: bg.genre,
+                    est_time: bg.est_time,
                     // user_id: user.id,
-                    borrow: borrow,
+                    borrow: bg.borrow,
                     
             })}}
             }

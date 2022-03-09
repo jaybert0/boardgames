@@ -1,21 +1,24 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { useState, useEffect } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import FormHelperText from "@mui/material/FormHelperText";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
+// import Grid from "@mui/material/Grid";
+// import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+import { useNavigate } from 'react-router';
+
 
 
 
 function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
-  console.log(user.id)
+  // console.log(user.id)
+  let navigate = useNavigate();
+
   const initialState = {
     name: "",
     picture_url: "",
@@ -26,10 +29,10 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
     user_id: user.id,
     borrow: false,
   };
-  console.log(initialState);
   function handleSetLibraryForm(att, input) {
     setLibraryForm({ ...libraryForm, [att]: input });
   }
+  console.log(libraryForm);
   function submitHandler(e) {
     e.preventDefault();
     fetch("/boardgames", {
@@ -44,6 +47,8 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
       .then((newBG) => {
         setLibraryForm(initialState);
         handleAddBG(newBG);
+        navigate("/")
+
       });
   }
 

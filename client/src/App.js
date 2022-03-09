@@ -14,6 +14,7 @@ import LibraryForm from './components/LibraryForm'
 import LibraryEditForm from './components/LibraryEditForm'
 import SignUp from "./components/SignUp";
 import WelcomeNewUser from './components/WelcomeNewUser'
+import UserEdit from './components/UserEdit'
 
 
 function App() {
@@ -62,6 +63,12 @@ function App() {
   function handleAddBG(addedBG) {
     setBGData((bgData) => [...bgData, addedBG])
   }
+  const delay = ms => new Promise(res => setTimeout(res, ms))
+
+  const handleEditUser = async (userEdit) => {
+    await delay(500);
+    setUser(userEdit)
+  }
 
     // if (!user) return <Login error={'please login'} />;
 
@@ -94,8 +101,8 @@ function App() {
     <Route path="/newBG" element={ <LibraryForm user={user} handleAddBG={handleAddBG} libraryForm={libraryForm} setLibraryForm={setLibraryForm}/>}></Route>
     <Route path="/editBG" element={ <LibraryEditForm user={user} handleAddBG={handleAddBG} libraryForm={libraryForm} setLibraryForm={setLibraryForm} />}></Route>
     <Route path="/sign_up" element={<SignUp setIsAuthenticated={setIsAuthenticated} setUser={setUser}/>}></Route>
-    <Route path="/" element={<WelcomeNewUser setUser={setUser} user={user} bgData={bgData} setBGData={setBGData} libraryForm={libraryForm} setLibraryForm={setLibraryForm}/>}></Route>
-
+    <Route path="/" element={<WelcomeNewUser handleEditUser={handleEditUser} setUser={setUser} user={user} bgData={bgData} setBGData={setBGData} libraryForm={libraryForm} setLibraryForm={setLibraryForm} />}></Route>
+    <Route path="/editUser" element={<UserEdit user={user} setUser={setUser} />}></Route>
     </Routes>
 }
     </>

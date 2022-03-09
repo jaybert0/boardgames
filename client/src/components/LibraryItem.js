@@ -45,7 +45,7 @@ function LibraryItem({id, name, picture_url, num_players, summary, genre, est_ti
       // .then((data)=>console.log(data))
       .then((data) => setModalData(data));
   }, []);
-  
+
   function deleteCard(){
         console.log(id)
         const config = {method: "DELETE"}
@@ -124,7 +124,7 @@ function LibraryItem({id, name, picture_url, num_players, summary, genre, est_ti
                     
             })}}
             }
-            >Edit</Button>
+            >Edit Game</Button>
             <IconButton aria-label="delete" onClick={() => deleteCard()}>
             <DeleteIcon />
           </IconButton>

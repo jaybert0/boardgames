@@ -36,24 +36,9 @@ function App() {
   const [user, setUser] = useState(null);
   const [libraryForm, setLibraryForm] = useState(initialState)
   
-
-  // useEffect(() => {
-  //   let isMounted = true;
-  //   fetch("/authorized_user")
-  //   .then((res) => {
-  //     if (res.ok) {
-  //       res.json()
-  //       .then((user) => {
-  //         if(isMounted){
-  //         setIsAuthenticated(true);
-  //         setUser(user);}
-  //       });
-  //       return () => {
-  //         isMounted = false;
-  //         };
-  //     }
-  //   });
-  // },[])
+  console.log(user)
+  console.log(bgData)
+  
   useEffect(() => {
     fetch("/authorized_user")
     .then((res) => {
@@ -66,24 +51,7 @@ function App() {
       }
     });
   },[])
-  // useEffect(() => {
-  //   let isMounted = true;
-  //   fetch("/authorized_user")
-  //   .then((res) => {
-  //     if (isMounted) {
-  //       res.json()
-  //       .then((user) => {
-  //         setUser(user);
-  //         setIsAuthenticated(true);
-  //       });
-  //       return () => {
-  //         isMounted = false;
-  //         };
-  //     }
-  //   });
-  // },[])
-  // to pass down to libraryList and to be used to set bgData locally
-
+  
     useEffect(() => {
     fetch("/boardgames")
       .then((r) => r.json())
@@ -111,27 +79,16 @@ function App() {
   //     .then((data) => setUserData(data));
   // }, []);
   // console.log("Boardgame Data:");
-  console.log(bgData);
+  // console.log(bgData);
   // console.log("User:");
   // console.log(userData);
-  console.log(user)
+  // console.log(user)
   return (
     <>
     <Navigation user={user} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setUser={setUser}/>
     { (!isAuthenticated)? <Login error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />:
 
     <Routes>
-    {/* <Route exact path="/">
-      <ProductionContainer productions={productions}/>
-    </Route>
-    <Route exact path="/productions/new">
-      <ProductionForm handlePost={handlePost} errors={errors} />
-    </Route>
-    <Route exact path="/productions/:id">
-        <ProductionDetail cart={cart} setCart={setCart}/>
-    </Route> */}
-    {/* <Route path="/" element={<Home/>}></Route> */}
-    {/* <Route path="/sign_up" element={<Auth setIsAuthenticated={setIsAuthenticated} setUser={setUser} />}></Route> */}
     <Route path="/login" element={ <Login  error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />}></Route>
     <Route path="/library" element={ <LibraryList user={user} bgData={bgData} setBGData={setBGData} libraryForm={libraryForm} setLibraryForm={setLibraryForm}/>}></Route>
     <Route path="/newBG" element={ <LibraryForm user={user} handleAddBG={handleAddBG} libraryForm={libraryForm} setLibraryForm={setLibraryForm}/>}></Route>

@@ -15,7 +15,7 @@ import Container from "@mui/material/Container";
 
 
 function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
-  console.log(user)
+  console.log(user.id)
   const initialState = {
     name: "",
     picture_url: "",
@@ -26,6 +26,7 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
     user_id: user.id,
     borrow: false,
   };
+  console.log(initialState);
   function handleSetLibraryForm(att, input) {
     setLibraryForm({ ...libraryForm, [att]: input });
   }

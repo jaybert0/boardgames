@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     # end 
     def show
         if current_user
-          render json: current_user, status: :ok
+          render json: current_user, serializer: UserShowSerializer, status: :ok
         else
           render json: "No current session stored", status: :unauthorized
         end

@@ -67,15 +67,17 @@ function SignUp({onLogin, setUser, setIsAuthenticated}) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),
     })
-      .then((res) => res.json().then(
-            navigate("/")
-          ))
-      .then((json) => {
-        console.log(json);
-        if (json.errors) setErrors(Object.entries(json.errors));
+      .then((res) => res.json().then((user) => {
+            setUser(user);
+            setIsAuthenticated(true)
+      })).then(navigate("/"))
+      // .then((json) => {
+      //   console.log(json);
+      //   if (json.errors) setErrors(Object.entries(json.errors));
 
 
-      });
+      // })
+      ;
   };
   return (
     <ThemeProvider theme={theme}>

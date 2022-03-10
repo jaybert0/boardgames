@@ -79,6 +79,8 @@ function App() {
   }
 
     // if (!user) return <Login error={'please login'} />;
+    if (!user) return <Login setIsAuthenticated={setIsAuthenticated} setUser={setUser} />;
+
 
   // useEffect(() => {
   //   fetch("/boardgames")

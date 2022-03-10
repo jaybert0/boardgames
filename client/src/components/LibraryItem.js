@@ -38,6 +38,7 @@ function LibraryItem({id, name, picture_url, num_players, summary, genre, est_ti
     setOpen(!open)
   }
   useEffect(() => {
+    
     fetch(`/boardgames/${bg.id}`)
       .then((r) => r.json())
       // .then((data)=>console.log(data))

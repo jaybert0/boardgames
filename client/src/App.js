@@ -106,7 +106,7 @@ function App() {
   // console.log(user)
   return (
     <>
-    <Navigation user={user} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setUser={setUser}/>
+    <Navigation setLibraryForm={setLibraryForm} user={user} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} setUser={setUser}/>
     { (!isAuthenticated)? <Login error={'please login'} setIsAuthenticated={setIsAuthenticated} setUser={setUser} />:
 
     <Routes>

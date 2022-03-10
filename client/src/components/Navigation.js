@@ -39,7 +39,7 @@ function TabPanel(props) {
     };
   }
 
-function Navigation({user, isAuthenticated, setIsAuthenticated, setUser}) {
+function Navigation({user, isAuthenticated, setIsAuthenticated, setUser, setLibraryForm}) {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
@@ -60,7 +60,20 @@ function Navigation({user, isAuthenticated, setIsAuthenticated, setUser}) {
         <Box sx={{ width: '100%' }}>
           <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
             <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-              <Tab label="Home" {...a11yProps(0)} component={Link} to='/' />
+              <Tab label="Home" {...a11yProps(0)} component={Link} to='/' onClick= {() => { 
+                setLibraryForm({
+                    key: "",
+                    id: "",
+                    name: "",
+                    picture_url: "",
+                    num_players: "",
+                    summary: "",
+                    genre: "",
+                    est_time: "",
+                    user_id: user.id,
+                    borrow: false,
+                    
+            })}} />
               <Tab label="Add New Game" {...a11yProps(1)} component={Link} to='/newBG' />
               {/* <Tab label="Login" {...a11yProps(2)} component={Link} to='/login' /> */}
               {user?<Tab onClick={logout} label="Logout" {...a11yProps(2)} />:<Tab label="Login" {...a11yProps(3)} component={Link} to='/login' />}

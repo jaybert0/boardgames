@@ -53,7 +53,7 @@ function LibraryItem({id, name, picture_url, num_players, summary, genre, est_ti
         .then((data) => console.log(data))
         window.location.reload()
       }
-  
+  console.log(bg)
     return (
         <Card sx={{ maxWidth: 1500 }}>
           <CardActionArea onClick={handleOpen}>
@@ -73,7 +73,7 @@ function LibraryItem({id, name, picture_url, num_players, summary, genre, est_ti
            <CardMedia
             component="img"
             height="250"
-            image={picture_url}
+            image={modalData.picture_url}
             alt={name}
           />
            {/* <IconButton aria-label="close" onClick={handleOpen}>

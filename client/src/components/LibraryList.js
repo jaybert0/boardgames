@@ -7,7 +7,7 @@ return(
     <div>
         {bgData.map(bg => (
             <LibraryItem 
-            key={bg.id}
+            
             setLibraryForm = {setLibraryForm}
             user={user}
             bg={bg}

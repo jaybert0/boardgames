@@ -38,7 +38,7 @@ function Login({setIsAuthenticated, setUser}) {
         .then(res => {  
           if(res.ok){
           res.json()
-          .then(user=>{
+          .then((user)=>{
             setUser(user)
             setIsAuthenticated(true)
             navigate("/")

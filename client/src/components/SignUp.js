@@ -15,7 +15,7 @@ import { useNavigate } from 'react-router';
 
 const theme = createTheme();
 
-function SignUp({onLogin, setIsAuthenticated}) {
+function SignUp({onLogin, setUser, setIsAuthenticated}) {
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -67,7 +67,9 @@ function SignUp({onLogin, setIsAuthenticated}) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),
     })
-      .then((res) => res.json())
+      .then((res) => res.json().then(
+            navigate("/")
+          ))
       .then((json) => {
         console.log(json);
         if (json.errors) setErrors(Object.entries(json.errors));

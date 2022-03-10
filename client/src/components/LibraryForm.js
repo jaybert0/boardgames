@@ -11,6 +11,8 @@ import FormHelperText from "@mui/material/FormHelperText";
 // import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { useNavigate } from 'react-router';
+import { useState, useEffect } from "react";
+
 
 
 
@@ -47,7 +49,7 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
       .then((newBG) => {
         setLibraryForm(initialState);
         handleAddBG(newBG);
-        navigate("/")
+        // navigate("/")
 
       });
   }

@@ -51,20 +51,31 @@ function App() {
         });
       }
     });
-  },[])
-  
-    useEffect(() => {
     fetch("/boardgames")
       .then((r) => r.json())
       // .then((data)=>console.log(data))
       .then((data) => setBGData(data));
-  }, []);
+  },[])
+  
+  //   useEffect(() => {
+  //   fetch("/boardgames")
+  //     .then((r) => r.json())
+  //     // .then((data)=>console.log(data))
+  //     .then((data) => setBGData(data));
+  // }, []);
 
+  
+  const delay = ms => new Promise(res => setTimeout(res, ms))
   function handleAddBG(addedBG) {
     setBGData((bgData) => [...bgData, addedBG])
+    console.log(bgData)
   }
-  const delay = ms => new Promise(res => setTimeout(res, ms))
 
+  // const handleAddBG = async (addedBG) => {
+  //       await delay(500);
+
+  //   setBGData((addedBG) => [...bgData, addedBG])
+  // }
   const handleEditUser = async (userEdit) => {
     await delay(500);
     setUser(userEdit)

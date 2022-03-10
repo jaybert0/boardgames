@@ -11,6 +11,7 @@ import { useState, useEffect } from "react";
 
 function LibraryEditForm({ handleAddBG, user, libraryForm, setLibraryForm }) {
     console.log(user.id);
+    console.log(libraryForm)
   const initialState = {
     name: "",
     picture_url: "",

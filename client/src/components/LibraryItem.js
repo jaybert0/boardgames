@@ -18,7 +18,7 @@ import Modal from '@mui/material/Modal';
 
 function LibraryItem({id, name, picture_url, num_players, summary, genre, est_time, borrow, available, bg, setLibraryForm, user}) {
  
-
+console.log(bg)
 
   const style = {
     position: 'absolute',
@@ -48,7 +48,7 @@ function LibraryItem({id, name, picture_url, num_players, summary, genre, est_ti
   function deleteCard(){
         console.log(id)
         const config = {method: "DELETE"}
-        fetch(`/boardgames/${id}`, config)
+        fetch(`/boardgames/${bg.id}`, config)
         .then((r) => r.json())
         .then((data) => console.log(data))
         window.location.reload()
@@ -108,8 +108,8 @@ function LibraryItem({id, name, picture_url, num_players, summary, genre, est_ti
           </CardActionArea>
           <CardActions>
             <Button size="small" label="edit" component={Link} to='/editBG' 
-            onClick= {() => {
-            if (bg.id === id) {
+            onClick= {() => { 
+            // if (bg.id === id) {
                 setLibraryForm({
                     key: bg.id,
                     id: bg.id,
@@ -123,7 +123,7 @@ function LibraryItem({id, name, picture_url, num_players, summary, genre, est_ti
                     borrow: bg.borrow,
                     
             })}}
-            }
+            // }
             >Edit Game</Button>
             <IconButton aria-label="delete" onClick={() => deleteCard()}>
             <DeleteIcon />

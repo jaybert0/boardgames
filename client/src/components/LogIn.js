@@ -116,7 +116,7 @@ function Login({setIsAuthenticated, setUser}) {
           </Box>
         </Box>
       </Container>
-            <SignUp />
+            <SignUp setIsAuthenticated={setIsAuthenticated} setUser={setUser} />
     </ThemeProvider>
         
         

@@ -62,20 +62,39 @@ function SignUp({onLogin, setUser, setIsAuthenticated}) {
       password: password,
       favorite: favorite,
     };
+
+    const userLogin = {
+      username: username,
+      password, 
+  }
     fetch(`/users`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),
     })
-      .then((res) => res.json().then(
-            navigate("/login")
-          ))
-      .then((json) => {
-        console.log(json);
-        if (json.errors) setErrors(Object.entries(json.errors));
-
-
-      });
+      // .then((res) => res.json()
+      // // .then(
+      // //       navigate("/login")
+      // //     )
+      //     )
+      // .then((json) => {
+      //   console.log(json);
+      //   if (json.errors) setErrors(Object.entries(json.errors));
+      // });
+      .then(res => {  
+        if(res.ok){
+        res.json()
+        .then((user)=>{
+          setUser(user)
+          setIsAuthenticated(true)
+          navigate("/")
+        })
+        
+      } else {
+        res.json()
+        .then(json => setErrors(json.error))
+      }
+    })
   };
   return (
     <ThemeProvider theme={theme}>

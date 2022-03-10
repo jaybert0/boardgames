@@ -4,9 +4,12 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import * as React from "react";
 import { useState } from "react";
+import { useNavigate } from 'react-router';
 
 function UserEdit({ user, handleEditUser }) {
   console.log(user);
+  let navigate = useNavigate();
+
   const style = {
     position: "absolute",
     top: "50%",
@@ -42,6 +45,7 @@ function UserEdit({ user, handleEditUser }) {
     //   .then((data) => console.log(data))
       .then((userEdit) => {
         handleEditUser(userEdit)
+        navigate("/")
       })
   }
   return (

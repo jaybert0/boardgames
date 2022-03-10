@@ -24,32 +24,32 @@ function Login({setIsAuthenticated, setUser}) {
     let navigate = useNavigate();
 
     function onSubmit(e){
-        e.preventDefault()
-        const user = {
-          username: username,
-          password, 
-      }
-       
-        fetch(`/login`,{
-          method:'POST',
-          headers:{'Content-Type': 'application/json'},
-          body:JSON.stringify(user)
-        })
-        .then(res => {  
-          if(res.ok){
-          res.json()
-          .then((user)=>{
-            setUser(user)
-            setIsAuthenticated(true)
-            navigate("/")
-          })
-          
-        } else {
-          res.json()
-          .then(json => setErrors(json.error))
-        }
-      })
+      e.preventDefault()
+      const user = {
+        username: username,
+        password, 
     }
+     
+      fetch(`/login`,{
+        method:'POST',
+        headers:{'Content-Type': 'application/json'},
+        body:JSON.stringify(user)
+      })
+      .then(res => {  
+        if(res.ok){
+        res.json()
+        .then((user)=>{
+          setUser(user)
+          setIsAuthenticated(true)
+          navigate("/")
+        })
+        
+      } else {
+        res.json()
+        .then(json => setErrors(json.error))
+      }
+    })
+  }
 
 
     return (

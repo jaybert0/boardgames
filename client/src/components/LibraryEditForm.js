@@ -8,10 +8,14 @@ import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import FormHelperText from "@mui/material/FormHelperText";
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router';
+
 
 function LibraryEditForm({ handleAddBG, user, libraryForm, setLibraryForm }) {
     console.log(user.id);
     console.log(libraryForm)
+    let navigate = useNavigate();
+
   const initialState = {
     name: "",
     picture_url: "",
@@ -36,10 +40,9 @@ function LibraryEditForm({ handleAddBG, user, libraryForm, setLibraryForm }) {
     })
       .then((r) => r.json())
       .then((data) => console.log(data))
-      .then((newBG) => {
-        setLibraryForm(initialState);
-        handleAddBG(newBG);
-      });
+      .then(navigate("/"));
+      setLibraryForm(initialState);
+      handleAddBG(libraryForm);
   }
 
   return (

@@ -38,25 +38,24 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
   console.log(libraryForm);
   function submitHandler(e) {
     e.preventDefault();
-    // fetch("/boardgames", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(libraryForm),
-    // })
-    //   .then((r) => r.json())
-    //   .then((data) => console.log(data))
-    //   .then((newBG) => {
-    //     handleAddBG(newBG);
-    //     setLibraryForm(initialState);
-    //     // window.location.reload()
-    //     navigate("/")
-    //     console.log(newBG)
-    //   });
-    handleAddBG(libraryForm);
-    // console.log(libraryForm);
-    
+    fetch("/boardgames", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(libraryForm),
+    })
+      .then((r) => r.json())
+      .then((data) => console.log(data))
+      .then(  navigate("/")
+      )
+      // .then((newBG) => {
+      //   // handleAddBG(newBG);
+      //   setLibraryForm(initialState);
+
+      // });
+      handleAddBG(libraryForm);
+      setLibraryForm(initialState);
 
   }
 

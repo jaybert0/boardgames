@@ -18,7 +18,7 @@ import Modal from '@mui/material/Modal';
 
 function LibraryItem({id, name, picture_url, num_players, summary, genre, est_time, borrow, available, bg, setLibraryForm, user}) {
  
-console.log(bg)
+// console.log(bg)
   const style = {
     position: 'absolute',
     top: '50%',

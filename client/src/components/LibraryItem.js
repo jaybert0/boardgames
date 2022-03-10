@@ -18,7 +18,6 @@ import Modal from '@mui/material/Modal';
 
 function LibraryItem({id, name, picture_url, num_players, summary, genre, est_time, borrow, available, bg, setLibraryForm, user}) {
  
-console.log(bg)
 
   const style = {
     position: 'absolute',
@@ -53,7 +52,6 @@ console.log(bg)
         .then((data) => console.log(data))
         window.location.reload()
       }
-  console.log(bg)
     return (
         <Card sx={{ maxWidth: 1500 }}>
           <CardActionArea onClick={handleOpen}>

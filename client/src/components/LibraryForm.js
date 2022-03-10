@@ -31,9 +31,9 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
     user_id: user.id,
     borrow: false,
   };
-  console.log(initialState);
+  // setLibraryForm(initialState);
   function handleSetLibraryForm(att, input) {
-    setLibraryForm({ ...libraryForm, [att]: input });
+    setLibraryForm({ ...libraryForm, user_id: user.id, [att]: input });
   }
   console.log(libraryForm);
   function submitHandler(e) {
@@ -48,11 +48,13 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
       .then((r) => r.json())
       .then((data) => console.log(data))
       .then((newBG) => {
-        setLibraryForm(initialState);
         handleAddBG(newBG);
+        setLibraryForm(initialState);
         // navigate("/")
-
+        console.log(newBG)
       });
+    // handleAddBG(libraryForm);
+    // console.log(libraryForm);
   }
 
   return (

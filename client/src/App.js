@@ -37,8 +37,8 @@ function App() {
   const [user, setUser] = useState(null);
   const [libraryForm, setLibraryForm] = useState(initialState)
   
-  console.log(user)
-  console.log(bgData)
+  // console.log(user)
+  // console.log(bgData)
   
   useEffect(() => {
     fetch("/authorized_user")
@@ -77,6 +77,8 @@ function App() {
 
   //   setBGData((bgData) => [...bgData, addedBG])
   // }
+
+  
   const handleEditUser = async (userEdit) => {
     await delay(500);
     setUser(userEdit)

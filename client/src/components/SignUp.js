@@ -68,7 +68,7 @@ function SignUp({onLogin, setUser, setIsAuthenticated}) {
       body: JSON.stringify(user),
     })
       .then((res) => res.json().then(
-            navigate("/")
+            navigate("/login")
           ))
       .then((json) => {
         console.log(json);

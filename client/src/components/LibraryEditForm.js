@@ -17,14 +17,14 @@ function LibraryEditForm({ handleAddBG, user, libraryForm, setLibraryForm }) {
     let navigate = useNavigate();
 
   const initialState = {
-    name: "",
-    picture_url: "",
-    num_players: "",
-    description: "",
-    genre: "",
-    est_time: "",
+    name: libraryForm.name,
+    picture_url: libraryForm.picture_url,
+    num_players: libraryForm.num_players,
+    description: libraryForm.summary,
+    genre: libraryForm.genre,
+    est_time: libraryForm.est_time,
     user_id: user.id,
-    borrow: false,
+    borrow: libraryForm.borrow,
   };
   function handleSetLibraryForm(att, input) {
     setLibraryForm({ ...libraryForm, [att]: input });
@@ -43,6 +43,7 @@ function LibraryEditForm({ handleAddBG, user, libraryForm, setLibraryForm }) {
       .then(navigate("/"));
       setLibraryForm(initialState);
       handleAddBG(libraryForm);
+      window.location.reload()
   }
 
   return (

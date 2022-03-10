@@ -55,7 +55,7 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
       // });
       handleAddBG(libraryForm);
       setLibraryForm(initialState);
-
+    window.location.reload();
   }
   // function submitHandler(e) {
   //   e.preventDefault();

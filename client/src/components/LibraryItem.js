@@ -42,6 +42,8 @@ function LibraryItem({id, name, picture_url, num_players, summary, genre, est_ti
       .then((r) => r.json())
       // .then((data)=>console.log(data))
       .then((data) => setModalData(data));
+      // window.location.reload()
+
   }, []);
 
   function deleteCard(){

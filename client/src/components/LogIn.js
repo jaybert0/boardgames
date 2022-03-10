@@ -11,6 +11,8 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import Avatar from "@mui/material/Avatar";
 import SignUp from './SignUp'
+import meeple from './meeples.png'
+
 
 
 const theme = createTheme();
@@ -59,15 +61,15 @@ function Login({setIsAuthenticated, setUser}) {
         <Box
         
           sx={{
-            marginTop: 8,
+            marginTop: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
-          </Avatar>
+          <Box>
+            <img src={meeple} alt="meeple logo" id="logo" />
+        </Box>
           <Typography component="h1" variant="h5">
             Log In
           </Typography>

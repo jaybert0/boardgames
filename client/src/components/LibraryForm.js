@@ -18,7 +18,7 @@ import { useState, useEffect } from "react";
 
 
 function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
-  // console.log(user.id)
+  console.log(user.id)
   let navigate = useNavigate();
 
   const initialState = {
@@ -31,6 +31,7 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
     user_id: user.id,
     borrow: false,
   };
+  console.log(initialState);
   function handleSetLibraryForm(att, input) {
     setLibraryForm({ ...libraryForm, [att]: input });
   }

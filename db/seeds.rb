@@ -9,16 +9,16 @@ puts "🌱 Seeding users..."
 User.create(
     username: "roll20",
     name: "Jay",
-    password_digest: "12345",
+    password: "12345",
     favorite: "Gloomhaven, Wingspan, Root",
-    borrowed: "Wingspan",
+    email: "jay@gloomhaven.com"
 )
 User.create(
     username: "the_pupper",
     name: "Reece",
-    password_digest: "56789",
+    password: "12345",
     favorite: "Good Dog, Bad Zombie; Dead of Winter",
-    borrowed: "Werewolf",
+    email: "reece@the_pupper.com"
 )
 puts "🌱🌱🌱 Users seeded!!! 🌱🌱🌱"
 puts "🌱 Seeding Boardgames..."
@@ -73,21 +73,6 @@ Boardgame.create(
     available: true
 )
 Boardgame.create(
-    name: "Root",
-    picture_url: "https://cf.geekdo-images.com/JUAUWaVUzeBgzirhZNmHHw__imagepage/img/ZF-dta5ffawuKAkAt2LB-QTIv5M=/fit-in/900x600/filters:no_upscale():strip_icc()/pic4254509.jpg",
-    num_players: "2-4",
-    description: "Root is a game of adventure and war in which 2 to 4 (1 to 6 with the 'Riverfolk' expansion) players battle for control of a vast wilderness.
-
-    The nefarious Marquise de Cat has seized the great woodland, intent on harvesting its riches. Under her rule, the many creatures of the forest have banded together. This Alliance will seek to strengthen its resources and subvert the rule of Cats. In this effort, the Alliance may enlist the help of the wandering Vagabonds who are able to move through the more dangerous woodland paths. Though some may sympathize with the Alliance’s hopes and dreams, these wanderers are old enough to remember the great birds of prey who once controlled the woods.
-    
-    Meanwhile, at the edge of the region, the proud, squabbling Eyrie have found a new commander who they hope will lead their faction to resume their ancient birthright. The stage is set for a contest that will decide the fate of the great woodland. It is up to the players to decide which group will ultimately take root.",
-    genre: "Strategy",
-    est_time: "60-90 minutes",
-    user_id: 1,
-    borrow: true, 
-    available: true
-)
-Boardgame.create(
     name: "Good Dog, Bad Zombie",
     picture_url: "https://cf.geekdo-images.com/rQkNKfuNHy6dQhfXUIn1OA__imagepage/img/81VJRp98V3fGHvbceTr6CIX3up8=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3977966.png",
     num_players: "2-4",
@@ -106,7 +91,7 @@ Boardgame.create(
 )
 Boardgame.create(
     name: "Dead of Winter: A Crossroads Game",
-    picture_url: "https://cf.geekdo-images.com/rQkNKfuNHy6dQhfXUIn1OA__imagepage/img/81VJRp98V3fGHvbceTr6CIX3up8=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3977966.png",
+    picture_url: "https://cf.geekdo-images.com/g4mV4BH-ZrhMUVgil-yV1A__imagepage/img/CJ6erNGmKfFGhR6ZbxXbBI7XaoE=/fit-in/900x600/filters:no_upscale():strip_icc()/pic3016500.jpg",
     num_players: "2-5",
     description: "Crossroads is a game series from Plaid Hat Games that tests a group of survivors' ability to work together and stay alive while facing crises and challenges from both outside and inside. Dead of Winter: A Crossroads Game, the first title in this series, puts 2-5 players in a small, weakened colony of survivors in a world in which most of humanity is either dead or diseased, flesh-craving monsters. Each player leads a faction of survivors, with dozens of different characters in the game.
 

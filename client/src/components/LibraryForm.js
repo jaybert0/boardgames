@@ -47,7 +47,11 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
     })
       .then((r) => r.json())
       .then((data) => console.log(data))
-      .then(  navigate("/")
+      .then(  
+        handleAddBG(libraryForm),
+      setLibraryForm(initialState),
+    window.location.reload(),
+        navigate("/")
       )
       // .then((newBG) => {
       //   // handleAddBG(newBG);

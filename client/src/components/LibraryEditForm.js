@@ -50,7 +50,7 @@ function LibraryEditForm({ handleAddBG, user, libraryForm, setLibraryForm }) {
     <Box
       component="form"
       sx={{
-        "& .MuiTextField-root": { m: 1, width: "25ch" },
+        "& .MuiTextField-root": { m: 1, width: "50ch" },
       }}
       noValidate
       autoComplete="off"
@@ -91,6 +91,16 @@ function LibraryEditForm({ handleAddBG, user, libraryForm, setLibraryForm }) {
           <TextField
             required
             id="outlined-required"
+            label="Estimated Time to Play"
+            onChange={(e) =>
+              handleSetLibraryForm("est_time", e.target.value)
+            }
+            defaultValue={libraryForm.est_time}
+          />
+          <br></br>
+          <TextField
+            required
+            id="outlined-required"
             label="Genre"
             onChange={(e) =>
               handleSetLibraryForm("genre", e.target.value)
@@ -110,7 +120,7 @@ function LibraryEditForm({ handleAddBG, user, libraryForm, setLibraryForm }) {
             defaultValue={libraryForm.summary}
           />
           <br></br>
-          <FormControl required fullWidth>
+          <FormControl required sx = {{m: 1, width: "50ch"}}>
             <InputLabel id="borrowable-label">Borrowable?</InputLabel>
             <Select
               labelId="borrowable=label"
@@ -127,7 +137,7 @@ function LibraryEditForm({ handleAddBG, user, libraryForm, setLibraryForm }) {
             <FormHelperText>Required</FormHelperText>
           </FormControl>
           <br></br>
-          <Button type="submit" variant="contained" id="submit">
+          <Button sx={{m: 1}} type="submit" variant="contained" id="submit">
             Edit Game
           </Button>
 

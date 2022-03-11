@@ -6,7 +6,7 @@ import * as React from "react";
 import { useState } from "react";
 import { useNavigate } from 'react-router';
 
-function UserEdit({ user, handleEditUser }) {
+function UserEdit({ user, handleEditUser, handleOpen }) {
   console.log(user);
   let navigate = useNavigate();
 
@@ -46,6 +46,7 @@ function UserEdit({ user, handleEditUser }) {
       .then((userEdit) => {
         handleEditUser(userEdit)
         navigate("/")
+        handleOpen()
       })
   }
   return (

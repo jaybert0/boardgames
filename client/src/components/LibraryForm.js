@@ -47,7 +47,11 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
     })
       .then((r) => r.json())
       .then((data) => console.log(data))
-      .then(  navigate("/")
+      .then(  
+        handleAddBG(libraryForm),
+      setLibraryForm(initialState),
+    window.location.reload(),
+        navigate("/")
       )
       // .then((newBG) => {
       //   // handleAddBG(newBG);
@@ -86,7 +90,7 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
     <Box
       component="form"
       sx={{
-        "& .MuiTextField-root": { m: 1, width: "25ch" },
+        "& .MuiTextField-root": { m: 1, width: "50ch" },
       }}
       noValidate
       autoComplete="off"
@@ -124,6 +128,16 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
           />
           <br></br>
           <TextField
+            required
+            id="outlined-required"
+            label="Estimated Time to Play"
+            onChange={(e) =>
+              handleSetLibraryForm("est_time", e.target.value)
+            }
+            value={libraryForm.est_time}
+          />
+          <br></br>
+          <TextField
           fullWidth
             required
             id="outlined-required"
@@ -144,7 +158,7 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
             value={libraryForm.description}
           />
           <br></br>
-          <FormControl required fullWidth>
+          <FormControl required sx = {{m: 1, width: "50ch"}}>
             <InputLabel id="borrowable-label">Borrowable?</InputLabel>
             <Select
               labelId="borrowable=label"
@@ -159,7 +173,7 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
             <FormHelperText>Required</FormHelperText>
           </FormControl>
           <br></br>
-          <Button type="submit" variant="contained" id="submit">
+          <Button sx={{m: 1}} type="submit" variant="contained" id="submit">
             Submit New Game
           </Button>
 

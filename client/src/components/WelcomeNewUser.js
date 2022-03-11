@@ -56,7 +56,7 @@ console.log(user)
             onClose={handleOpen}
             aria-labelledby="modal-modal-title"
             aria-describedby="modal-modal-description"
-        ><UserEdit user={user} handleEditUser={handleEditUser}/></Modal>
+        ><UserEdit user={user} handleEditUser={handleEditUser} handleOpen={handleOpen}/></Modal>
       </Card>
       <LibraryList bgData={bgData} setBGData={setBGData} libraryForm={libraryForm} setLibraryForm={setLibraryForm}/>
       </>

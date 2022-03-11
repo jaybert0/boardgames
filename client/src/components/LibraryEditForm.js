@@ -91,6 +91,16 @@ function LibraryEditForm({ handleAddBG, user, libraryForm, setLibraryForm }) {
           <TextField
             required
             id="outlined-required"
+            label="Estimated Time to Play"
+            onChange={(e) =>
+              handleSetLibraryForm("est_time", e.target.value)
+            }
+            defaultValue={libraryForm.est_time}
+          />
+          <br></br>
+          <TextField
+            required
+            id="outlined-required"
             label="Genre"
             onChange={(e) =>
               handleSetLibraryForm("genre", e.target.value)

@@ -124,6 +124,16 @@ function LibraryForm({ handleAddBG, libraryForm, setLibraryForm, user }) {
           />
           <br></br>
           <TextField
+            required
+            id="outlined-required"
+            label="Estimated Time to Play"
+            onChange={(e) =>
+              handleSetLibraryForm("est_time", e.target.value)
+            }
+            value={libraryForm.est_time}
+          />
+          <br></br>
+          <TextField
           fullWidth
             required
             id="outlined-required"

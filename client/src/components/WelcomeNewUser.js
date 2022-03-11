@@ -14,7 +14,7 @@ import UserEdit from './UserEdit'
 
 
 function WelcomeNewUser({bgData, setBGData, libraryForm, setLibraryForm, user, handleChangeUser, handleEditUser}) {
-
+console.log(user)
     const [open, setOpen] = React.useState(false);
     // const [modalData, setModalData] = useState([])
     // const [editUser, setEditUser] = useState(null)

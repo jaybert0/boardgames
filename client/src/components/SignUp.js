@@ -109,8 +109,11 @@ function SignUp({onLogin, setUser, setIsAuthenticated}) {
             alignItems: "center",
           }}
         >
-          <Typography component="h1" variant="h5">
-            If you do not have an account, Sign Up below:
+          <Typography component="h1" variant="h5" sx={{align: 'center'}}>
+            If you do not have an account, 
+          </Typography>
+          <Typography component="h1" variant="h5" sx={{align: 'center'}}>
+            Sign Up below:
           </Typography>
           <Box
             component="form"

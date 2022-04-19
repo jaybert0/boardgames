@@ -43,7 +43,7 @@ function Login({setIsAuthenticated, setUser}) {
         .then((user)=>{
           setUser(user)
           setIsAuthenticated(true)
-          navigate("/")
+          // navigate("/")
         })
         
       } else {

@@ -37,7 +37,8 @@ console.log(user)
             Welcome {user.name}!
           </Typography>
           <Typography variant="body2" color="text.secondary">
-              This is an online library of all boardgames that Flatiron School has available in our communal Board Game Library. Please add that you would like to share!<br></br>
+              This is an online library of all boardgames that Flatiron School has available in our communal Board Game Library. Please add any boardgames you would like to share and leave in the library!<br></br>
+              Please update when you borrow a game, and bring back all the pieces!!!!<br></br><br></br>
             Username: {user.username}<br></br>
             Favorite Games: {user.favorite}
           </Typography>

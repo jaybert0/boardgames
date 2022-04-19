@@ -62,9 +62,9 @@ function App() {
     fetch("/boardgames")
       .then((r) => r.json())
       // .then((data)=>console.log(data))
-      .then((data) => setBGData(data));
-  }, []);
-
+      .then((data) => setBGData(data),
+      console.log(bgData));
+  }, [isAuthenticated]);
   
   const delay = ms => new Promise(res => setTimeout(res, ms))
   function handleAddBG(addedBG) {

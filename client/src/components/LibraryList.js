@@ -5,9 +5,9 @@ function LibraryList({bgData, libraryForm, setLibraryForm, user}){
 console.log(bgData)
 return(
     <div>
-        {bgData.map(bg => (
+        {bgData?.map(bg => (
             <LibraryItem 
-            
+            key = {bg.id}
             setLibraryForm = {setLibraryForm}
             user={user}
             bg={bg}

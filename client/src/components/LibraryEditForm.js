@@ -7,13 +7,12 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import FormHelperText from "@mui/material/FormHelperText";
-import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router';
 
 
 function LibraryEditForm({ handleAddBG, user, libraryForm, setLibraryForm }) {
-    console.log(user.id);
-    console.log(libraryForm)
+    // console.log(user.id);
+    // console.log(libraryForm)
     let navigate = useNavigate();
 
   const initialState = {
